@@ -1,3 +1,23 @@
+.basicColor{
+  display: block;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  margin: 5%;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.sub-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .App {
   text-align: center;
 }
