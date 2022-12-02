@@ -5,7 +5,6 @@ import axios from "axios";
 import {useState, useEffect} from "react";
 import Chart from 'react-apexcharts';
 
-const API_KEY = "RGAPI-0babe4f0-414f-4d09-b4f5-e90fcd5dc50f";
 const API_URL_SUMMONERS = "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/";
 const API_URL_ENTRIES = "https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/";
 const API_URL_GET_LIST_MATCH = "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/";
@@ -102,6 +101,7 @@ class Test extends Component {
               <input type="text" onChange={this.handleChange}/>
               <button onClick={this.onClick()}>{this.state.name}</button>
               <AutoLayoutSizingExample pseudo={this.state.name} rank={this.state.rank} tier={this.state.tier} wins={this.state.wins} losses={this.state.losses} lvl={this.state.lvl}/>
+              <ChampionBox data={this.state.data_match}/>
           </form>
     );
     }
@@ -111,12 +111,16 @@ class ChampionBox extends Component{
     render() {
         return(
             <div>
-                <div className="basicColor">
-                    name : {this.props.data[0]};
-                    death : {this.props.deaths};
-                    kills : {this.props.kills};
-                    assists : {this.props.assists};
-                </div>
+                {this.props.data.forEach((el)=>{
+                    console.log("toto" + el)
+                return(
+                    <div className="basicColor">
+                    name : {el};
+                    death : ;
+                    kills : ;
+                    assists : ;
+                </div>)
+            })}
             </div>
             )
     }
