@@ -5,6 +5,7 @@ import axios from "axios";
 import {useState, useEffect} from "react";
 import Chart from 'react-apexcharts';
 
+const API_KEY = "RGAPI-0babe4f0-414f-4d09-b4f5-e90fcd5dc50f";
 const API_URL_SUMMONERS = "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/";
 const API_URL_ENTRIES = "https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/";
 const API_URL_GET_LIST_MATCH = "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/";
@@ -30,7 +31,6 @@ class ApexChart extends React.Component {
     }
 
     render() {
-        console.log(this.props.wins)
         return (
             <div id="chart">
                 <Chart options={this.state.options} series={[this.props.wins, this.props.looses]} type="pie" width={380} />
@@ -75,7 +75,11 @@ class Test extends Component {
         this.setState({name: event.target.value});
     };
 
-    async onClick(){
+     onClick(){
+         this.testtt();
+    }
+
+    async testtt(){
         const summoners = await api1(this.state.name);
         const dataSummoners = await api2(summoners.id);
         const listIDMatches = await api3(summoners.puuid);
@@ -86,12 +90,11 @@ class Test extends Component {
             data = await api4(listIDMatches[i]);
             for (let j = 0; j < 8; j++) {
                 if(data.info.participants[j].summonerName == this.state.name){
-                    tab.push(data.info.participants[j].championName, data.info.participants[j].kills, data.info.participants[j].deaths, data.info.participants[j].assists);
+                    tab.push([data.info.participants[j].championName, data.info.participants[j].kills, data.info.participants[j].deaths, data.info.participants[j].assists]);
                     break;
                 }
             }
             this.setState({data_match: tab});
-            console.log(this.state.data_match);
         }
     }
 
@@ -108,19 +111,27 @@ class Test extends Component {
 }
 
 class ChampionBox extends Component{
+    fct(){
+        return (
+            this.props.data.map((el, index)=>{
+                console.log("toto " + el);
+                console.log(el);
+                return(
+                    <div className="basicColor">
+                        champion : {el[0]};
+                        kills : {el[1]};
+                        death : {el[2]};
+                        assists : {el[3]};
+                    </div>
+                    )
+            })
+        )
+
+    }
     render() {
         return(
             <div>
-                {this.props.data.forEach((el)=>{
-                    console.log("toto" + el)
-                return(
-                    <div className="basicColor">
-                    name : {el};
-                    death : ;
-                    kills : ;
-                    assists : ;
-                </div>)
-            })}
+                {this.fct()}
             </div>
             )
     }
@@ -148,17 +159,6 @@ class AutoLayoutSizingExample extends Component {
                     </div>
                     <div className="basicColor">
                         lvl : {this.props.lvl}
-                    </div>
-                </div>
-                <div className="sub-container">
-                    <div className="basicColor">
-                        pseudo : {this.props.pseudo}
-                    </div>
-                    <div className="basicColor">
-                        rank : {this.props.rank}
-                    </div>
-                    <div className="basicColor">
-                        tier : {this.props.tier}
                     </div>
                 </div>
                 <ApexChart wins={this.props.wins} looses={this.props.losses}/>
