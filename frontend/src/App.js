@@ -14,20 +14,15 @@ const API_URL_GET_CHAMPION_IMAGE = "https://ddragon.leagueoflegends.com/cdn/img/
 
 //Velkoz_0.jpg
 class ApexChart extends React.Component {
-    state = {
-        wins: 100,
-        looses: 50,
-    }
     constructor(props) {
         super(props);
         this.state = {
-            series: [this.props.wins, this.props.looses],
             options: {
                 chart: {
                     type: 'pie',
                 },
-                labels: ['Loose', 'Win'],
-                colors:['#ff0000', 'rgba(0,0,255,0.4)'],
+                labels: ['Win', 'Loose'],
+                colors:['rgba(0,0,255,0.4)', '#ff0000'],
                 legend: {
                     show: false
                 }
@@ -39,7 +34,7 @@ class ApexChart extends React.Component {
         console.log(this.props.wins)
         return (
             <div id="chart">
-                <Chart options={this.state.options} series={this.state.series} type="pie" width={380} />
+                <Chart options={this.state.options} series={[this.props.wins, this.props.looses]} type="pie" width={380} />
             </div>
         );
     }
@@ -71,13 +66,9 @@ class Test extends Component {
         lvl: null,
         rank: null,
         tier: null,
-        wins: null,
-        losses: null,
-        matches_data: null,
-        championName: null,
-        kills: null,
-        deaths: [],
-        assists: null,
+        wins: 100,
+        losses: 0,
+        data_match: [],
         champion_image: "Velkoz_0.jpg"
     };
 
@@ -91,21 +82,17 @@ class Test extends Component {
         const listIDMatches = await api3(summoners.puuid);
         this.setState({rank: dataSummoners.rank, tier: dataSummoners.tier, wins: dataSummoners.wins, losses: dataSummoners.losses, lvl: summoners.summonerLevel});
         let data;
+        let tab = [];
         for (let i = 0; i < 5; i++) {
             data = await api4(listIDMatches[i]);
             for (let j = 0; j < 8; j++) {
                 if(data.info.participants[j].summonerName == this.state.name){
-                    console.log(data.info.participants[j].summonerName);
-                    console.log(data.info.participants[j].championName);
-                    console.log(data.info.participants[j].kills);
-                    console.log(data.info.participants[j].deaths);
-                    console.log(data.info.participants[j].assists);
-
+                    tab.push(data.info.participants[j].championName, data.info.participants[j].kills, data.info.participants[j].deaths, data.info.participants[j].assists);
                     break;
                 }
             }
-            //this.setState({championName: data.info.participants[j].championName, kills: data.info.participants[j].kills,
-            //    deaths: data.info.participants[j].deaths, assists: data.info.participants[j].assists});
+            this.setState({data_match: tab});
+            console.log(this.state.data_match);
         }
     }
 
@@ -114,9 +101,7 @@ class Test extends Component {
           <form>
               <input type="text" onChange={this.handleChange}/>
               <button onClick={this.onClick()}>{this.state.name}</button>
-              <AutoLayoutSizingExample pseudo={this.state.name} rank={this.state.rank} tier={this.state.tier} wins={this.state.wins} losses={this.state.losses} lvl={this.state.lvl}
-              data={this.state.matches_data}/>
-              Bonjour
+              <AutoLayoutSizingExample pseudo={this.state.name} rank={this.state.rank} tier={this.state.tier} wins={this.state.wins} losses={this.state.losses} lvl={this.state.lvl}/>
           </form>
     );
     }
