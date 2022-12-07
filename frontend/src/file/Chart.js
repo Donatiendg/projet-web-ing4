@@ -10,7 +10,7 @@ class ApexChart extends React.Component {
                     type: 'pie',
                 },
                 labels: ['Win', 'Loose'],
-                colors:['rgba(0,0,255,0.4)', '#ff0000'],
+                colors:['rgba(91,190,20,0.63)', '#ff0000'],
                 legend: {
                     show: false
                 }

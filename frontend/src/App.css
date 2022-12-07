@@ -1,15 +1,52 @@
-.basicColor{
-  display: block;
-  background-color: black;
+body{
+  background: linear-gradient(#23A6AD, #033A45); ;
+}
+
+.ChampionCards{
+  display: flex;
+}
+
+.championCard{
+  border-radius: 20px;
+  float:left;
+  background: no-repeat;
+  width: 12%;
+  height: 300px;
+  padding: 3%;
+  margin: 1%;
   color: white;
+  -webkit-box-shadow : 0 0 10px 5px #2ab42a;
+}
+
+.infoChampionCard{
+  float:bottom;
+  padding: 5%;
+}
+
+.infosChampionCard{
+  margin-top:80%;
   border-radius: 10px;
+  background-color: rgba(218, 218, 218, 0.46);
+  backdrop-filter: blur(2px);
+}
+
+.basicColor{
+  display: flex;
+  background-color: rgba(239, 239, 239, 0.26);
+  color: white;
   margin: 5%;
+  padding: 10%;
+  border-radius: 5px;
+}
+
+.componentName{
+  color: rgba(196, 196, 196, 0.75);
 }
 
 .container{
+  /*background: linear-gradient(#23A6AD, #033A45);*/
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+
 }
 
 .sub-container{

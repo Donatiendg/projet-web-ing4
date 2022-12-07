@@ -13,12 +13,14 @@ class ChampionBox extends Component{
                 console.log("toto " + el);
                 console.log(el);
                 return(
-                    <div className="basicColor" style={{backgroundImage: this.fct2(el[0])}}>
-                        champion : {el[0]};
-                        kills : {el[1]};
-                        death : {el[2]};
-                        assists : {el[3]};
-                    </div>
+                        <div className="championCard" style={{backgroundImage: this.fct2(el[0])}}>
+                            <div className="infosChampionCard">
+                                <div className="infoChampionCard">champion : {el[0]}</div>
+                                <div className="infoChampionCard">kills : {el[1]}</div>
+                                <div className="infoChampionCard">death : {el[2]}</div>
+                                <div className="infoChampionCard">assists : {el[3]}</div>
+                            </div>
+                        </div>
                 )
             })
         )
@@ -26,7 +28,7 @@ class ChampionBox extends Component{
     }
     render() {
         return(
-            <div>
+            <div className="championCards">
                 {this.fct()}
             </div>
         )
