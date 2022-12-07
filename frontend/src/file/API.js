@@ -3,7 +3,7 @@ import axios from "axios";
 import ChampionBox from "./ChampionBox";
 import AutoLayoutSizingExample from "./Render";
 
-const API_KEY = "";
+const API_KEY = "RGAPI-f68895a7-1a1d-4473-ac72-cadd2483d859";
 const API_URL_SUMMONERS = "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/";
 const API_URL_ENTRIES = "https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/";
 const API_URL_GET_LIST_MATCH = "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/";
@@ -43,14 +43,13 @@ class API extends Component {
         data_match: [],
         champion_image: "Velkoz_0.jpg"
     };
+    onClick = event => {
+        this.callAPI();
+    };
 
     handleChange = event => {
         this.setState({name: event.target.value});
     };
-
-    onClick(){
-        this.callAPI();
-    }
 
     async callAPI(){
         const summoners = await api1(this.state.name);
@@ -73,12 +72,12 @@ class API extends Component {
 
     render() {
         return(
-            <form>
+            <div>
                 <input type="text" onChange={this.handleChange}/>
-                <button onClick={this.onClick()}>{this.state.name}</button>
+                <button onClick={this.onClick}>{this.state.name}</button>
                 <AutoLayoutSizingExample pseudo={this.state.name} rank={this.state.rank} tier={this.state.tier} wins={this.state.wins} losses={this.state.losses} lvl={this.state.lvl}/>
                 <ChampionBox data={this.state.data_match}/>
-            </form>
+            </div>
         );
     }
 }
