@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {cloneElement, Component} from "react";
 import axios from "axios";
 import ChampionBox from "./ChampionBox";
 import AutoLayoutSizingExample from "./Render";
@@ -8,9 +8,6 @@ const API_URL_SUMMONERS = "https://euw1.api.riotgames.com/lol/summoner/v4/summon
 const API_URL_ENTRIES = "https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/";
 const API_URL_GET_LIST_MATCH = "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/";
 const API_URL_GET_Match = "https://europe.api.riotgames.com/lol/match/v5/matches/";
-
-//Velkoz_0.jpg
-
 
 async function api1(name){
     let res = await axios.get(`${API_URL_SUMMONERS}${name}?api_key=${API_KEY}`).catch(console.error);
@@ -34,7 +31,8 @@ async function api4(id_matche) {
 
 class API extends Component {
     state = {
-        name: "BlitzKay",
+        name: null,
+        name_display: null,
         lvl: null,
         rank: null,
         tier: null,
@@ -43,6 +41,7 @@ class API extends Component {
         data_match: [],
         champion_image: "Velkoz_0.jpg"
     };
+
     onClick = event => {
         this.callAPI();
     };
@@ -56,6 +55,7 @@ class API extends Component {
         const dataSummoners = await api2(summoners.id);
         const listIDMatches = await api3(summoners.puuid);
         this.setState({rank: dataSummoners.rank, tier: dataSummoners.tier, wins: dataSummoners.wins, losses: dataSummoners.losses, lvl: summoners.summonerLevel});
+        this.setState({name_display: this.state.name});
         let data;
         let tab = [];
         for (let i = 0; i < 5; i++) {
@@ -74,8 +74,8 @@ class API extends Component {
         return(
             <div>
                 <input type="text" onChange={this.handleChange}/>
-                <button onClick={this.onClick}>{this.state.name}</button>
-                <AutoLayoutSizingExample pseudo={this.state.name} rank={this.state.rank} tier={this.state.tier} wins={this.state.wins} losses={this.state.losses} lvl={this.state.lvl}/>
+                <button onClick={this.onClick}>Rechercher</button>
+                <AutoLayoutSizingExample pseudo={this.state.name_display} rank={this.state.rank} tier={this.state.tier} wins={this.state.wins} losses={this.state.losses} lvl={this.state.lvl}/>
                 <ChampionBox data={this.state.data_match}/>
             </div>
         );

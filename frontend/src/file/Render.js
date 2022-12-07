@@ -26,6 +26,7 @@ class AutoLayoutSizingExample extends Component {
                     </div>
                 </div>
                 <ApexChart wins={this.props.wins} looses={this.props.losses}/>
+                <img src={`./image/emblem_${this.props.tier}.png`} alt=""></img>
             </div>
         );
     }
