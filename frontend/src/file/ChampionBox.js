@@ -7,13 +7,18 @@ class ChampionBox extends Component{
         return `url("${API_URL_GET_CHAMPION_IMAGE}${nom}_0.jpg")`;
     }
 
+    fct3(value){
+        if(value)
+            return "championCard win";
+        else
+            return "championCard loose";
+    }
+
     fct(){
         return (
-            this.props.data.map((el, index)=>{
-                console.log("toto " + el);
-                console.log(el);
+            this.props.data.map((el, index)=> {
                 return(
-                        <div className="championCard" style={{backgroundImage: this.fct2(el[0])}}>
+                        <div key={index.toString()} className={this.fct3(el[4])} style={{backgroundImage: this.fct2(el[0])}}>
                             <div className="infosChampionCard">
                                 <div className="infoChampionCard">champion : {el[0]}</div>
                                 <div className="infoChampionCard">kills : {el[1]}</div>

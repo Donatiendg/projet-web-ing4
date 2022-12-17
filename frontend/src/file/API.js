@@ -3,7 +3,7 @@ import axios from "axios";
 import ChampionBox from "./ChampionBox";
 import AutoLayoutSizingExample from "./Render";
 
-const API_KEY = "RGAPI-f68895a7-1a1d-4473-ac72-cadd2483d859";
+const API_KEY = "RGAPI-cbdad465-258a-4f44-be5b-2b71c9e552ff";
 const API_URL_SUMMONERS = "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/";
 const API_URL_ENTRIES = "https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/";
 const API_URL_GET_LIST_MATCH = "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/";
@@ -60,9 +60,9 @@ class API extends Component {
         let tab = [];
         for (let i = 0; i < 5; i++) {
             data = await api4(listIDMatches[i]);
-            for (let j = 0; j < 8; j++) {
-                if(data.info.participants[j].summonerName == this.state.name){
-                    tab.push([data.info.participants[j].championName, data.info.participants[j].kills, data.info.participants[j].deaths, data.info.participants[j].assists]);
+            for (let j = 0; j < 10; j++) {
+                if(data.info.participants[j].summonerName === this.state.name){
+                    tab.push([data.info.participants[j].championName, data.info.participants[j].kills, data.info.participants[j].deaths, data.info.participants[j].assists, data.info.participants[j].win]);
                     break;
                 }
             }
