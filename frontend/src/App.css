@@ -2,40 +2,39 @@ body{
   background: linear-gradient(#23A6AD, #033A45); ;
 }
 
-.ChampionCards{
-  display: flex;
+.championCard{
+  margin-right: auto;
+  margin-left: auto;
+  background: no-repeat;
+  width: 200px;
+  color: white;
 }
 
-.championCard{
-  border-radius: 20px;
-  float:left;
-  background: no-repeat;
-  width: 12%;
-  height: 300px;
-  padding: 3%;
-  margin: 1%;
-  color: white;
+.win{
   -webkit-box-shadow : 0 0 10px 5px #2ab42a;
+}
+.loose{
+  -webkit-box-shadow : 0 0 10px 5px #d50f17;
 }
 
 .infoChampionCard{
-  float:bottom;
+  height: 50px;
+  width: 200px;
   padding: 5%;
+  margin:10px;
+
 }
 
 .infosChampionCard{
-  margin-top:80%;
-  border-radius: 10px;
-  background-color: rgba(218, 218, 218, 0.46);
+  background-color: rgba(218, 218, 218, 0.21);
   backdrop-filter: blur(2px);
 }
 
 .basicColor{
-  display: flex;
-  background-color: rgba(239, 239, 239, 0.26);
+  background-color: rgba(255, 255, 255, 0.15);
   color: white;
-  margin: 5%;
-  padding: 10%;
+  margin: 5px;
+  padding: 20px ;
   border-radius: 5px;
 }
 
@@ -44,15 +43,34 @@ body{
 }
 
 .container{
-  /*background: linear-gradient(#23A6AD, #033A45);*/
-  display: flex;
 
 }
 
+img{
+  width: 300px;
+  height: 300px;
+}
+
+.chart{
+  background-color: rgba(180, 31, 31, 0.53);
+}
+
+
+.emblem{
+
+  background-color: rgba(0, 0, 255, 0.77);
+}
+
+.chartEmblemContainer{
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 .sub-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .App {

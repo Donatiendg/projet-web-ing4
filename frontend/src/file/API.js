@@ -3,7 +3,7 @@ import axios from "axios";
 import ChampionBox from "./ChampionBox";
 import AutoLayoutSizingExample from "./Render";
 
-const API_KEY = "RGAPI-cbdad465-258a-4f44-be5b-2b71c9e552ff";
+const API_KEY = "RGAPI-55e72abd-9883-42a2-844b-634bf9021e47";
 const API_URL_SUMMONERS = "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/";
 const API_URL_ENTRIES = "https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/";
 const API_URL_GET_LIST_MATCH = "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/";
@@ -20,7 +20,7 @@ async function api2(id) {
 }
 
 async function api3(puuid) {
-    let res = await axios.get(`${API_URL_GET_LIST_MATCH}${puuid}/ids?start=0&count=5&api_key=${API_KEY}`).catch(console.error);
+    let res = await axios.get(`${API_URL_GET_LIST_MATCH}${puuid}/ids?start=0&count=6&api_key=${API_KEY}`).catch(console.error);
     return res.data;
 }
 
@@ -58,7 +58,7 @@ class API extends Component {
         this.setState({name_display: this.state.name});
         let data;
         let tab = [];
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 6; i++) {
             data = await api4(listIDMatches[i]);
             for (let j = 0; j < 10; j++) {
                 if(data.info.participants[j].summonerName === this.state.name){
