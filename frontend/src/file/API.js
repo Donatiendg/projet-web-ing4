@@ -3,7 +3,7 @@ import axios from "axios";
 import ChampionBox from "./ChampionBox";
 import AutoLayoutSizingExample from "./Render";
 
-const API_KEY = "RGAPI-55e72abd-9883-42a2-844b-634bf9021e47";
+const API_KEY = "RGAPI-59c4f085-fe87-4321-8f5a-7c47990436d4";
 const API_URL_SUMMONERS = "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/";
 const API_URL_ENTRIES = "https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/";
 const API_URL_GET_LIST_MATCH = "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/";
@@ -73,8 +73,9 @@ class API extends Component {
     render() {
         return(
             <div>
-                <input type="text" onChange={this.handleChange}/>
-                <button onClick={this.onClick}>Rechercher</button>
+                <h1>API League of legends</h1>
+                <input className="inputName" placeholder="Entrez un pseudo" type="text" onChange={this.handleChange}/>
+                <button className="boutonR" onClick={this.onClick}>Rechercher</button>
                 <AutoLayoutSizingExample pseudo={this.state.name_display} rank={this.state.rank} tier={this.state.tier} wins={this.state.wins} losses={this.state.losses} lvl={this.state.lvl}/>
                 <ChampionBox data={this.state.data_match}/>
             </div>

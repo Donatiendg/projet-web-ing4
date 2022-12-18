@@ -1,20 +1,48 @@
 body{
-  background: linear-gradient(#23A6AD, #033A45); ;
+  background-image: url("https://www.wallpapertip.com/wmimgs/82-825721_league-of-legends-wallpaper-logo.jpg");
+  background-size: 100%;
+}
+.inputName{
+  border-radius: 50px;
+  text-align: center;
 }
 
+h3{
+  color: rgb(9, 20, 40);
+}
+h2{
+  color: #c8aa6e;
+}
+
+h1{
+  color: #c89b3c;
+  font-family: "MS UI Gothic";
+  font-weight: bold;
+}
+.boutonR{
+  margin:5px;
+  border-radius: 50px;
+  background: linear-gradient(rgb(9, 20, 40), rgb(0, 90, 130));
+  color: #ffffff;
+  border-style: solid;
+  border-color: white;
+}
 .championCard{
   margin-right: auto;
   margin-left: auto;
   background: no-repeat;
   width: 200px;
-  color: white;
+  color: #ffffff;
+  border-radius: 10px;
 }
 
 .win{
-  -webkit-box-shadow : 0 0 10px 5px #2ab42a;
+  -webkit-box-shadow : 0 0 5px 5px #2ab42a;
+  background-size: 100%;
 }
 .loose{
-  -webkit-box-shadow : 0 0 10px 5px #d50f17;
+  -webkit-box-shadow : 0 0 5px 5px #d50f17;
+  background-size: 100%;
 }
 
 .infoChampionCard{
@@ -25,54 +53,89 @@ body{
 
 }
 
+.infoJoueur{
+  width: 360px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .infosChampionCard{
   background-color: rgba(218, 218, 218, 0.21);
   backdrop-filter: blur(2px);
 }
 
 .basicColor{
-  background-color: rgba(255, 255, 255, 0.15);
   color: white;
-  margin: 5px;
-  padding: 20px ;
-  border-radius: 5px;
+  padding: 15px 15px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.29);
+  border-radius: 100px;
+  margin-bottom: 10px;
+  background: linear-gradient(rgba(9, 20, 40, 0.5), rgba(3, 151, 171, 0.56));
 }
 
 .componentName{
   color: rgba(196, 196, 196, 0.75);
+  backdrop-filter: blur(5px);
 }
 
 .container{
-
 }
 
 img{
-  width: 300px;
-  height: 300px;
+  width: 190px;
+  height: 190px;
 }
 
 .chart{
-  background-color: rgba(180, 31, 31, 0.53);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+
 }
 
 
+.apexcharts-canvas{
+  margin-left: auto;
+  margin-right: auto;
+}
 .emblem{
-
-  background-color: rgba(0, 0, 255, 0.77);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  backdrop-filter: blur(3px);
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .chartEmblemContainer{
-
   margin-left: auto;
   margin-right: auto;
+
 }
 
 
 .sub-container{
-  margin-left: auto;
-  margin-right: auto;
+border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
+.section{
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  backdrop-filter: blur(3px);
+}
 .App {
   text-align: center;
 }

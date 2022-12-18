@@ -10,7 +10,7 @@ class ApexChart extends React.Component {
                     type: 'pie',
                 },
                 labels: ['Win', 'Loose'],
-                colors:['rgba(91,190,20,0.63)', '#ff0000'],
+                colors:['rgb(3,151,171)', '#ff0000'],
                 legend: {
                     show: false
                 }
@@ -21,7 +21,8 @@ class ApexChart extends React.Component {
     render() {
         return (
             <div id="chart">
-                <Chart options={this.state.options} series={[this.props.wins, this.props.looses]} type="pie" width={380} />
+                <h3>Win/loose</h3>
+                <Chart options={this.state.options} series={[this.props.wins, this.props.looses]} type="pie" width={250} />
             </div>
         );
     }
