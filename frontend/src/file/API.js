@@ -1,4 +1,5 @@
-import React, {cloneElement, Component} from "react";
+import
+    React, {cloneElement, Component} from "react";
 import axios from "axios";
 import ChampionBox from "./ChampionBox";
 import AutoLayoutSizingExample from "./Render";
@@ -118,12 +119,15 @@ class API extends Component {
                 <input className="inputName" placeholder="Entrez un pseudo" type="text" onChange={this.handleChange}/>
                 <button className="boutonR" onClick={this.onClick}>Rechercher</button>
                 <AutoLayoutSizingExample pseudo={this.state.name_display} rank={this.state.rank} tier={this.state.tier} wins={this.state.wins} losses={this.state.losses} lvl={this.state.lvl} profileIconId={this.state.profileIconId}/>
-                <DropdownButton id="dropdown-basic-button" title="Game mode" onSelect={this.handleSelect}>
+                <div className="section">
+                <h2>Statistiques des 6 dernières game jouées</h2>
+                <DropdownButton variant="dark" menuVariant="dark" id="dropdown-basic-button" title="Sélectionnez un mode de jeu" onSelect={this.handleSelect}>
                     <Dropdown.Item eventKey={"1"}>All</Dropdown.Item>
                     <Dropdown.Item eventKey={"2"}>Normal</Dropdown.Item>
                     <Dropdown.Item eventKey={"3"}>Aram</Dropdown.Item>
                 </DropdownButton>
                 <ChampionBox data={this.state.data_match}/>
+                </div>
             </div>
         );
     }

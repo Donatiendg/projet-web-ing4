@@ -11,7 +11,8 @@ h3{
   color: rgb(9, 20, 40);
 }
 h2{
-  color: #c8aa6e;
+  color: #212529;
+  text-shadow:0 -2px 4px #ffb942;
 }
 
 h1{
@@ -31,7 +32,7 @@ h1{
   margin-right: auto;
   margin-left: auto;
   background: no-repeat;
-  width: 200px;
+  width: 180px;
   color: #ffffff;
   border-radius: 10px;
 }
@@ -47,9 +48,17 @@ h1{
 
 .infoChampionCard{
   height: 50px;
-  width: 200px;
+  width: 150px;
   padding: 5%;
   margin:10px;
+
+}
+
+.dropDownMenu{
+  background: linear-gradient(rgb(9, 20, 40), rgb(0, 90, 130));
+  color: #fa0000;
+  border-radius: 50px;
+  margin: 5px;
 
 }
 
@@ -64,14 +73,22 @@ h1{
   backdrop-filter: blur(2px);
 }
 
-.basicColor{
+.pseudo{
   color: white;
-  padding: 15px 15px;
-  border-style: solid;
-  border-color: rgba(255, 255, 255, 0.29);
+  font-size: 70px;
+  margin-top: 15px;
+}
+
+.level{
+  font-size: 20px;
+  background: linear-gradient(rgb(28, 67, 129), rgb(0, 90, 130));
+  color: #ffffff;
+  margin-right: auto;
+  margin-left: auto;
+  display: inline-block;
+  padding: 1px 10px;
   border-radius: 100px;
-  margin-bottom: 10px;
-  background: linear-gradient(rgba(9, 20, 40, 0.5), rgba(3, 151, 171, 0.56));
+  vertical-align: center;
 }
 
 .componentName{
@@ -79,12 +96,21 @@ h1{
   backdrop-filter: blur(5px);
 }
 
-.container{
+h6{
+  color: white;
+}
+.profilIconImg{
+  width: 160px;
+  height: 160px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.29);
+  border-radius: 100px;
+  margin:10px;
 }
 
-img{
-  width: 190px;
-  height: 190px;
+.emblemImg{
+  width: 140px;
+  height: 140px;
 }
 
 .chart{

@@ -25,7 +25,7 @@ class ApexChart extends React.Component {
         return (
             <div id="chart">
                 <h3>Win/loose</h3>
-                <Chart options={this.state.options} series={[this.props.wins, this.props.looses]} type="pie" width={250} />
+                <Chart options={this.state.options} series={[this.props.wins, this.props.looses]} type="pie" width={195} />
             </div>
         );
     }

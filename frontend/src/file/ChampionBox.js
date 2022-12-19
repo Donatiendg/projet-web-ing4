@@ -36,7 +36,6 @@ class ChampionBox extends Component{
     render() {
         return(
             <div className="row section">
-                <h2>Statistiques des 6 dernières game jouées</h2>
                 {this.fct()}
             </div>
         )
