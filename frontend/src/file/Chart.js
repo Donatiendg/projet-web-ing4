@@ -13,6 +13,9 @@ class ApexChart extends React.Component {
                 colors:['rgb(3,151,171)', '#ff0000'],
                 legend: {
                     show: false
+                },
+                title: {
+                    show: false
                 }
             },
         };

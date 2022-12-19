@@ -31,7 +31,6 @@ class ChampionBox extends Component{
                 )
             })
         )
-
     }
 
     render() {

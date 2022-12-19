@@ -10,23 +10,18 @@ class AutoLayoutSizingExample extends Component {
                     <div className="sub-container row">
                         <h3>Statistique saison</h3>
                         <div className="basicColor col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4">
-                            pseudo : {this.props.pseudo}
+                            {this.props.pseudo}
                         </div>
-                        <div className="basicColor col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4">
-                            rank : {this.props.rank}
-                        </div>
-                        <div className="basicColor col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4">
-                            tier : {this.props.tier}
-                        </div>
-                        <div className="basicColor col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4">
-                            wins : {this.props.wins}
-                        </div>
-                        <div className="basicColor col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4">
-                            losses : {this.props.losses}
-                        </div>
+                        <img src={`./profileicon/${this.props.profileIconId}.png`} alt=""></img>
                         <div className="basicColor col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4">
                             lvl : {this.props.lvl}
                         </div>
+                    </div>
+                </div>
+                <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                    <div className="emblem">
+                        <h3>{this.props.tier} {this.props.rank}</h3>
+                        <img src={`./image/emblem_${this.props.tier}.png`} alt=""></img>
                     </div>
                 </div>
                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
@@ -36,13 +31,6 @@ class AutoLayoutSizingExample extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
-                    <div className="emblem">
-                        <h3>Emblème du rang de la saison</h3>
-                        <img src={`./image/emblem_${this.props.tier}.png`} alt=""></img>
-                    </div>
-                </div>
-
 
             </div>
         );

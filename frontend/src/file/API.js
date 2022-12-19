@@ -2,6 +2,8 @@ import React, {cloneElement, Component} from "react";
 import axios from "axios";
 import ChampionBox from "./ChampionBox";
 import AutoLayoutSizingExample from "./Render";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 
 const API_KEY = "RGAPI-59c4f085-fe87-4321-8f5a-7c47990436d4";
 const API_URL_SUMMONERS = "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/";
@@ -32,14 +34,16 @@ async function api4(id_matche) {
 class API extends Component {
     state = {
         name: null,
-        name_display: null,
-        lvl: null,
+        name_display: "Rekkles",
+        lvl: "100",
         rank: null,
-        tier: null,
+        tier: "CHALLENGER",
         wins: 100,
         losses: 0,
         data_match: [],
-        champion_image: "Velkoz_0.jpg"
+        champion_image: "Velkoz_0.jpg",
+        profileIconId: "1"
+
     };
 
     onClick = event => {
@@ -54,7 +58,7 @@ class API extends Component {
         const summoners = await api1(this.state.name);
         const dataSummoners = await api2(summoners.id);
         const listIDMatches = await api3(summoners.puuid);
-        this.setState({rank: dataSummoners.rank, tier: dataSummoners.tier, wins: dataSummoners.wins, losses: dataSummoners.losses, lvl: summoners.summonerLevel});
+        this.setState({rank: dataSummoners.rank, tier: dataSummoners.tier, wins: dataSummoners.wins, losses: dataSummoners.losses, lvl: summoners.summonerLevel, profileIconId: summoners.profileIconId});
         this.setState({name_display: this.state.name});
         let data;
         let tab = [];
@@ -76,11 +80,19 @@ class API extends Component {
                 <h1>API League of legends</h1>
                 <input className="inputName" placeholder="Entrez un pseudo" type="text" onChange={this.handleChange}/>
                 <button className="boutonR" onClick={this.onClick}>Rechercher</button>
-                <AutoLayoutSizingExample pseudo={this.state.name_display} rank={this.state.rank} tier={this.state.tier} wins={this.state.wins} losses={this.state.losses} lvl={this.state.lvl}/>
+                <AutoLayoutSizingExample pseudo={this.state.name_display} rank={this.state.rank} tier={this.state.tier} wins={this.state.wins} losses={this.state.losses} lvl={this.state.lvl} profileIconId={this.state.profileIconId}/>
                 <ChampionBox data={this.state.data_match}/>
             </div>
         );
     }
 }
+
+/*class CB1 extends Component{
+    render() {
+        return(
+            <ChampionBox data={this.state.data_match}/>
+        )
+    }
+}*/
 
 export default API;
