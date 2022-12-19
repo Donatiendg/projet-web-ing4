@@ -12,7 +12,7 @@ class AutoLayoutSizingExample extends Component {
                         <div className="basicColor col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4">
                             {this.props.pseudo}
                         </div>
-                        <img src={`./profileicon/${this.props.profileIconId}.png`} alt=""></img>
+                        <img src={`https://ddragon.leagueoflegends.com/cdn/12.23.1/img/profileicon/${this.props.profileIconId}.png`} alt=""></img>
                         <div className="basicColor col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4">
                             lvl : {this.props.lvl}
                         </div>

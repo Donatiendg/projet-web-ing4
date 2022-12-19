@@ -19,7 +19,7 @@ class ChampionBox extends Component{
             this.props.data.map((el, index) => {
                 return (
                     <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-2">
-                        <div key={index.toString()} className={this.fct3(el[4])} style={{backgroundImage: this.fct2(el[0])}}>
+                        <div className={this.fct3(el[4])} style={{backgroundImage: this.fct2(el[0])}}>
                             <div className="infosChampionCard">
                                 <div className="infoChampionCard">champion : {el[0]}</div>
                                 <div className="infoChampionCard">kills : {el[1]}</div>
