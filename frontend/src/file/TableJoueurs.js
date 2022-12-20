@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 
 class TableJoueurs extends Component {
 
@@ -8,6 +10,12 @@ class TableJoueurs extends Component {
             <div>
                 <div className="row section">
                     <h2>Listes d'amis et blacklist</h2>
+                    <input className="inputPseudo" placeholder="Entrez un pseudo" type="text"/>
+                    <DropdownButton variant="dark" className="dropDownMenu" menuVariant="dark" id="dropdown-basic-button" title="Sélectionnez une liste">
+                        <Dropdown.Item eventKey={"1"}>Amis proche</Dropdown.Item>
+                        <Dropdown.Item eventKey={"2"}>Amis</Dropdown.Item>
+                        <Dropdown.Item eventKey={"3"}>BlackList</Dropdown.Item>
+                    </DropdownButton>
                     <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
                         <table className="table table-hover table-dark">
                             <thead>
@@ -22,7 +30,6 @@ class TableJoueurs extends Component {
                             </tr>
                             </tbody>
                         </table>
-                        <button className="bouttonAjouter">Ajouter un pseudo + </button>
                     </div>
 
                     <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
@@ -39,7 +46,6 @@ class TableJoueurs extends Component {
                             </tr>
                             </tbody>
                         </table>
-                        <button className="bouttonAjouter">Ajouter un pseudo + </button>
                     </div>
 
                     <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
@@ -56,9 +62,7 @@ class TableJoueurs extends Component {
                             </tr>
                             </tbody>
                         </table>
-                        <button className="bouttonAjouter">Ajouter un pseudo + </button>
                     </div>
-
                 </div>
             </div>
 

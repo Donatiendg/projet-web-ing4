@@ -37,7 +37,6 @@ class AutoLayoutSizingExample extends Component {
                         </div>
                     </div>
                 </div>
-
             </div>
         );
     }
