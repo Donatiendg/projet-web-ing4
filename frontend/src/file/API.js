@@ -8,7 +8,7 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import data from "bootstrap/js/src/dom/data";
 import TableJoueurs from "./TableJoueurs";
 
-const API_KEY = "RGAPI-be880b4e-a751-45fd-8f1e-bb8c55a0b2a8";
+const API_KEY = "RGAPI-68365174-d714-457d-9358-c5cb9a8b07c4";
 const API_URL_SUMMONERS = "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/";
 const API_URL_ENTRIES = "https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/";
 const API_URL_GET_LIST_MATCH = "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/";

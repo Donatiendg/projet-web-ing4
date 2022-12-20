@@ -21,3 +21,7 @@ Les instructions sont à retrouver dans le pdf instruction.pdf.
 **Le non respect de ces instructions entraînera des pertes de points alors prenez le temps de tout lire et de poser des questions si vous ne comprenez pas**
 
 Pour rappel, la probabilité de recevoir une réponse à un mail envoyé quelques heures avant le rendu est très proche de 0.
+
+
+### Problèmes et bug
+- Tout le backend à été fait par Antonin, malheureusement il n'a pas pu push, on ne sait pas pourquoi.
