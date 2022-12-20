@@ -60,6 +60,11 @@ class API extends Component {
         this.setState({name: event.target.value});
     };
 
+    /*
+        La fonction callAPI() est un peu la fonction principale de cette partie du projet.
+        Elle permet de récupérer toutes les informations en appelant les différentes api.
+     */
+
     async callAPI(){
         const summoners = await api1(this.state.name);
         const dataSummoners = await api2(summoners.id);
@@ -67,6 +72,11 @@ class API extends Component {
         this.setState({rank: dataSummoners.rank, tier: dataSummoners.tier, wins: dataSummoners.wins, losses: dataSummoners.losses, lvl: summoners.summonerLevel, profileIconId: summoners.profileIconId});
         this.setState({name_display: this.state.name});
 
+        /*
+            On cherche les 6 derniers march joué par le joueur renseigné.
+            On stoque ces data dans le state data_match et data_match1.
+            On affiche par défaut ces data (en cas de changement on le garde en mémoire via le state data_match1.
+         */
         let data;
         let tab1 = [];
         for (let i = 0; i < 6; i++) {
@@ -80,6 +90,12 @@ class API extends Component {
         }
         this.setState({data_match: tab1, data_match1: tab1});
 
+        /*
+            Cette partie prend plus de temps c'est pour ça qu'elle est distincte de la première.
+            On vérifie parmi les 100 dernières parties (pour avoir un peu de marge) les parties de type "Classic"
+            et "Aram".
+            On ajoute tout de même une condition pour avorter la boucle dans le cas ou toute les données ont été trouvées.
+        */
         let tab2 = [];
         let tab3 = [];
         for (let i = 0; i < 100; i++) {
@@ -102,6 +118,9 @@ class API extends Component {
         this.setState({data_match2: tab2, data_match3: tab3});
     }
 
+    /*
+        On change les data affiché par ChampionBox.
+     */
     handleSelect = e => {
         this.setState({matchShow: e})
         if(e == 1)
@@ -112,6 +131,9 @@ class API extends Component {
             this.setState({data_match: this.state.data_match3});
     }
 
+    /*
+        On affiche une bonne partie des informations via ce render.
+     */
     render() {
         return(
             <div>
