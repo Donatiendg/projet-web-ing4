@@ -119,7 +119,7 @@ class API extends Component {
     }
 
     /*
-        On change les data affiché par ChampionBox.
+        On change les data affichées par ChampionBox.
      */
     handleSelect = e => {
         this.setState({matchShow: e})
@@ -143,7 +143,7 @@ class API extends Component {
                 <AutoLayoutSizingExample pseudo={this.state.name_display} rank={this.state.rank} tier={this.state.tier} wins={this.state.wins} losses={this.state.losses} lvl={this.state.lvl} profileIconId={this.state.profileIconId}/>
                 <div className="section">
                 <h2>Statistiques des 6 dernières game jouées</h2>
-                <DropdownButton variant="dark" menuVariant="dark" id="dropdown-basic-button" title="Sélectionnez un mode de jeu" onSelect={this.handleSelect}>
+                <DropdownButton variant="dark" className="dropDownMenu" menuVariant="dark" id="dropdown-basic-button" title="Sélectionnez un mode de jeu" onSelect={this.handleSelect}>
                     <Dropdown.Item eventKey={"1"}>All</Dropdown.Item>
                     <Dropdown.Item eventKey={"2"}>Normal</Dropdown.Item>
                     <Dropdown.Item eventKey={"3"}>Aram</Dropdown.Item>

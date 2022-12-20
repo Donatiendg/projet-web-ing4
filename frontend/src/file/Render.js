@@ -6,7 +6,7 @@ class AutoLayoutSizingExample extends Component {
         return (
             <div className="row section">
                 <h2>Information du joueur</h2>
-                <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4">
                     <div className="emblem">
                         <h3>{this.props.tier} {this.props.rank}</h3>
                         <img className="emblemImg" src={`./image/emblem_${this.props.tier}.png`} alt=""></img>
@@ -30,7 +30,7 @@ class AutoLayoutSizingExample extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4">
                     <div className="chartEmblemContainer row">
                         <div className="chart">
                             <ApexChart wins={this.props.wins} looses={this.props.losses}/>
