@@ -6,6 +6,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Dans la partie API League of Legends, nous avons réalisé en tout 5 widgets.
 
+### Instructions
+
+- Se connecter/créer un compte sur https://developer.riotgames.com/ 
+- Une fois connecté, demander une clé d'API
+- Placer la clé d'API dans le fichier API.js à la ligne 10
+- Démarrer le npm depuis le fichier "frontend"
+- Une fois arrivé sur le dashboard, entrer un pseudo riot, voici quelque exemples (Rekkles, BlitsKay, Eslatyre) puis appuyer sur "Rechercher".
+- Enfin, selectionner un mode de jeu à l'aide du dropdown menu.
+
 ### Information du joueur
 
 Dans cette partie, nous avons comme widgets :

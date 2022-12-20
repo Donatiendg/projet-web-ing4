@@ -3,80 +3,42 @@ body{
   background-size: 100%;
 }
 
-/*---------------Render.js-----------------------------*/
+h1{color: #c89b3c;font-family: "MS UI Gothic";font-weight: bold;}
 
-.inputName{
-  border-radius: 50px;
-  text-align: center;
-}
+h2{color: #212529;text-shadow:0 -2px 4px #ffb942;}
 
-h3{
-  color: rgb(9, 20, 40);
-}
-h2{
-  color: #212529;
-  text-shadow:0 -2px 4px #ffb942;
-}
+h3{color: rgb(9, 20, 40);}
 
-h1{
-  color: #c89b3c;
-  font-family: "MS UI Gothic";
-  font-weight: bold;
-}
-.boutonR{
-  margin:5px;
-  border-radius: 50px;
-  background: linear-gradient(rgb(9, 20, 40), rgb(0, 90, 130));
-  color: #ffffff;
-  border-style: solid;
-  border-color: white;
-}
-.championCard{
-  margin-right: auto;
-  margin-left: auto;
-  background: no-repeat;
-  width: 180px;
-  color: #ffffff;
+h6{color: white;}
+
+/*----------------------Render.js----------------------*/
+
+.chart{
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
   border-radius: 10px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.win{
-  -webkit-box-shadow : 0 0 5px 5px #2ab42a;
-  background-size: 100%;
-}
-.loose{
-  -webkit-box-shadow : 0 0 5px 5px #d50f17;
-  background-size: 100%;
+.chartEmblemContainer{
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.infoChampionCard{
-  height: 50px;
-  width: 150px;
-  padding: 5%;
-  margin:10px;
-
+.emblem{
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  backdrop-filter: blur(3px);
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.dropDownMenu{
-  margin: 5px;
-
-}
-
-.infoJoueur{
-  width: 360px;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.infosChampionCard{
-  background-color: rgba(218, 218, 218, 0.21);
-  backdrop-filter: blur(2px);
-}
-
-.pseudo{
-  color: white;
-  font-size: 70px;
-  margin-top: 15px;
+.emblemImg{
+  width: 140px;
+  height: 140px;
 }
 
 .level{
@@ -91,14 +53,6 @@ h1{
   vertical-align: center;
 }
 
-.componentName{
-  color: rgba(196, 196, 196, 0.75);
-  backdrop-filter: blur(5px);
-}
-
-h6{
-  color: white;
-}
 .profilIconImg{
   width: 160px;
   height: 160px;
@@ -108,51 +62,10 @@ h6{
   margin:10px;
 }
 
-.emblemImg{
-  width: 140px;
-  height: 140px;
-}
-
-.chart{
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-
-
-}
-
-
-.apexcharts-canvas{
-  margin-left: auto;
-  margin-right: auto;
-}
-.emblem{
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  text-align: center;
-  backdrop-filter: blur(3px);
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.chartEmblemContainer{
-  margin-left: auto;
-  margin-right: auto;
-
-}
-
-.container{
-  margin-left: 100px;
-}
-
-.sub-container{
-border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(3px);
-  margin: 10px auto;
+.pseudo{
+  color: white;
+  font-size: 70px;
+  margin-top: 15px;
 }
 
 .section{
@@ -164,6 +77,80 @@ border-radius: 10px;
   margin-bottom: 10px;
   backdrop-filter: blur(3px);
 }
+
+.sub-container{
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  margin: 10px auto;
+}
+
+/*----------------------API.js-----------------------*/
+
+.boutonR{
+  margin:5px;
+  border-radius: 50px;
+  background: linear-gradient(rgb(9, 20, 40), rgb(0, 90, 130));
+  color: #ffffff;
+  border-style: solid;
+  border-color: white;
+}
+
+.dropDownMenu{
+  margin: 5px;
+}
+
+.inputName{
+  border-radius: 50px;
+  text-align: center;
+}
+
+/*----------------------ChampionBox.js---------------------*/
+
+.championCard{
+  margin-right: auto;
+  margin-left: auto;
+  background: no-repeat;
+  width: 180px;
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+.infoChampionCard{
+  height: 50px;
+  width: 150px;
+  padding: 5%;
+  margin:10px;
+}
+
+.infosChampionCard{
+  background-color: rgba(218, 218, 218, 0.21);
+  backdrop-filter: blur(2px);
+}
+
+.loose{
+  -webkit-box-shadow : 0 0 5px 5px #d50f17;
+  background-size: 100%;
+}
+
+.win{
+  -webkit-box-shadow : 0 0 5px 5px #2ab42a;
+  background-size: 100%;
+}
+
+/*-----------------------------------------------------------*/
+
+.componentName{
+  color: rgba(196, 196, 196, 0.75);
+  backdrop-filter: blur(5px);
+}
+
+.apexcharts-canvas{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 .App {
   text-align: center;
 }

@@ -12,7 +12,7 @@ class AutoLayoutSizingExample extends Component {
                         <img className="emblemImg" src={`./image/emblem_${this.props.tier}.png`} alt=""></img>
                     </div>
                 </div>
-                <div className="container col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 ">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 ">
                     <div className="sub-container row">
                         <div className="col-12 col-sm-6 col-md-6 col-lg-5 col-xl-5">
                             <div>
