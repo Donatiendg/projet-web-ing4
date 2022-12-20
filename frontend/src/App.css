@@ -138,7 +138,16 @@ h6{color: white;}
   background-size: 100%;
 }
 
-/*-----------------------------------------------------------*/
+/*---------------------------TableJoueur.js-------------------------------*/
+
+.bouttonAjouter{
+  border-radius: 10px;
+  margin: 5px;
+  background-color: #282c34;
+  color: white;
+}
+
+/*-------------------------------------------------------------*/
 
 .componentName{
   color: rgba(196, 196, 196, 0.75);

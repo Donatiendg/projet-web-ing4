@@ -6,6 +6,7 @@ import AutoLayoutSizingExample from "./Render";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import data from "bootstrap/js/src/dom/data";
+import TableJoueurs from "./TableJoueurs";
 
 const API_KEY = "RGAPI-be880b4e-a751-45fd-8f1e-bb8c55a0b2a8";
 const API_URL_SUMMONERS = "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/";
@@ -150,6 +151,7 @@ class API extends Component {
                 </DropdownButton>
                 <ChampionBox data={this.state.data_match}/>
                 </div>
+                <TableJoueurs></TableJoueurs>
             </div>
         );
     }
