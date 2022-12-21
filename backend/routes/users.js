@@ -1,9 +1,18 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+const multer = require('multer');
+const upload = multer();
+var usersController = require('../controllers/users');
+
+router.get('/users', usersController.getAllUsers);
+router.post("/users", upload.none(), usersController.newUser);
+//router.post('/users', usersController.newUser);
+router.delete('/users', usersController.deleteAllUsers);
+
+
+router.get('/users/:name', usersController.getOneUser);
+router.post('/users/:name', usersController.newComment);
+router.delete('/users/:name', usersController.deleteOneUser);
 
 module.exports = router;

@@ -147,6 +147,20 @@ h6{color: white;}
   color: white;
 }
 
+.inputPseudo{
+  border-radius: 50px;
+  text-align: center;
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.inputCommentaire{
+  border-radius: 50px;
+  text-align: center;
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+}
 /*-------------------------------------------------------------*/
 
 .componentName{

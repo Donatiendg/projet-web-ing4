@@ -1,14 +1,21 @@
+import axios from "axios";
+
 import
     React, {cloneElement, Component} from "react";
-import axios from "axios";
-import ChampionBox from "./ChampionBox";
-import AutoLayoutSizingExample from "./Render";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
+import {useEffect, useState} from 'react';
+
+import {getOneUser, getAllUsers, newUser, deleteOneUser, newComment} from "./services/UserList";
+import ChampionBox from "./ChampionBox";
+import AutoLayoutSizingExample from "./Render";
+
 import data from "bootstrap/js/src/dom/data";
 import TableJoueurs from "./TableJoueurs";
 
-const API_KEY = "RGAPI-be880b4e-a751-45fd-8f1e-bb8c55a0b2a8";
+
+
+const API_KEY = "RGAPI-68365174-d714-457d-9358-c5cb9a8b07c4";
 const API_URL_SUMMONERS = "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/";
 const API_URL_ENTRIES = "https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/";
 const API_URL_GET_LIST_MATCH = "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/";
@@ -34,6 +41,7 @@ async function api4(id_matche) {
     return res.data;
 }
 
+
 class API extends Component {
     state = {
         name: null,
@@ -50,8 +58,25 @@ class API extends Component {
         champion_image: "Velkoz_0.jpg",
         profileIconId: "1",
         matchShow: "1",
-
+        info_ami:[],
     };
+
+    refreshUsers = event => 
+    {
+        // API thisApi = this;
+        getAllUsers()
+        .catch((error)=>
+        {
+            // if an error has occured, do something here
+            //...
+            console.log(error);
+        })
+        .then((info_ami)=>
+        {
+            console.log(info_ami);
+            this.setState({info_ami: info_ami});
+        });
+    }
 
     onClick = event => {
         this.callAPI();
@@ -61,17 +86,20 @@ class API extends Component {
         this.setState({name: event.target.value});
     };
 
+
     /*
         La fonction callAPI() est un peu la fonction principale de cette partie du projet.
         Elle permet de récupérer toutes les informations en appelant les différentes api.
      */
-
     async callAPI(){
         const summoners = await api1(this.state.name);
         const dataSummoners = await api2(summoners.id);
         const listIDMatches = await api3(summoners.puuid);
         this.setState({rank: dataSummoners.rank, tier: dataSummoners.tier, wins: dataSummoners.wins, losses: dataSummoners.losses, lvl: summoners.summonerLevel, profileIconId: summoners.profileIconId});
         this.setState({name_display: this.state.name});
+
+        this.refreshUsers();
+
 
         /*
             On cherche les 6 derniers march joué par le joueur renseigné.
@@ -132,6 +160,7 @@ class API extends Component {
             this.setState({data_match: this.state.data_match3});
     }
 
+
     /*
         On affiche une bonne partie des informations via ce render.
      */
@@ -140,6 +169,12 @@ class API extends Component {
             <div>
                 <h1>API League of legends</h1>
                 <input className="inputName" placeholder="Entrez un pseudo" type="text" onChange={this.handleChange}/>
+                <button onClick={this.refreshUsers}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                        <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                    </svg>
+                </button>
                 <button className="boutonR" onClick={this.onClick}>Rechercher</button>
                 <AutoLayoutSizingExample pseudo={this.state.name_display} rank={this.state.rank} tier={this.state.tier} wins={this.state.wins} losses={this.state.losses} lvl={this.state.lvl} profileIconId={this.state.profileIconId}/>
                 <div className="section">
@@ -151,10 +186,12 @@ class API extends Component {
                 </DropdownButton>
                 <ChampionBox data={this.state.data_match}/>
                 </div>
-                <TableJoueurs></TableJoueurs>
+                <TableJoueurs info_ami={this.state.info_ami}></TableJoueurs>
             </div>
         );
     }
+      
 }
+
 
 export default API;
