@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Widgets disponible
 
-Dans la partie API League of Legends, nous avons réalisé en tout 6 widgets.
+Dans la partie API League of Legends, nous avons réalisé en tout 5 widgets.
 
 ### Instructions
 
@@ -36,8 +36,6 @@ Ici, nous avons un menu déroulant ainsi qu'un ensemble de "carte" où chacune d
   - Le texte écrit par dessus affiche :
     - Le nom du champion utilisé.
     - son KDA (Kill, Death, Assist) sur la partie.
-- Liste d'amis : Liste simple d'amis à refresh manuellement : données organisées sur mangoDB
-
 
 ### Problèmes et bug
 - Tout le backend à été fait par Antonin, malheureusement il n'a pas pu push, on ne sait pas pourquoi.
