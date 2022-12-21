@@ -146,6 +146,13 @@ h6{color: white;}
   background-color: #282c34;
   color: white;
 }
+.inputPseudo{
+  border-radius: 50px;
+  text-align: center;
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 .inputPseudo{
   border-radius: 50px;

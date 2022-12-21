@@ -1,23 +1,43 @@
-# Projet de fin de semestre
+# API League of Legends (LOL)
 
-A lire impérativement avant de commencer quoi que ce soit, ce sont les règles que vous devrez appliquer tout au long du semestre:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and react.
 
-<p align="center">
- <a href="https://gitlab.com/ggekos/ece-commun/-/blob/master/README.md">Règles pour le semestre</a>
-</p>
+## Widgets disponible
 
-## Introduction
+Dans la partie API League of Legends, nous avons réalisé en tout 5 widgets.
 
-Ce repo git contient deux repertoires. L'un concerne la partie backend et l'autre la partie frontend.
+### Instructions
 
-Les deux repertoires ont été initialisé pour vous aider à démarrer le projet dans les meilleures conditions.
+- Se connecter/créer un compte sur https://developer.riotgames.com/ 
+- Une fois connecté, demander une clé d'API
+- Placer la clé d'API dans le fichier API.js à la ligne 10
+- Démarrer le npm depuis le fichier "frontend"
+  - Si cela ne fonctionne pas, assurez-vous d'avoir l'extension CORS (Cross-origin ressource sharing) sur Chrome. 
+- Une fois arrivé sur le dashboard, entrer un pseudo riot, voici quelque exemples (Rekkles, BlitsKay, Eslatyre) puis appuyer sur "Rechercher".
+- Enfin, selectionner un mode de jeu à l'aide du dropdown menu.
 
-Chacun de ces repertoires contient un README.md qui vous pouvez vous approprier. Nous vous encourageons à le faire en y mettant toute les informations nécessaires à la compréhension de votre projet
+### Information du joueur
 
-## Instructions
+Dans cette partie, nous avons comme widgets :
+- L'icône du profil du joueur avec son pseudo et son niveau actuel.
+- L'affichage du rang joueur avec sa division et l'emblème de cette dernière.
+- Un graphique représentant le nombre de partie gagné ou de partie perdu dans la saison du joueur.
 
-Les instructions sont à retrouver dans le pdf instruction.pdf.
+### Informations des parties
 
-**Le non respect de ces instructions entraînera des pertes de points alors prenez le temps de tout lire et de poser des questions si vous ne comprenez pas**
+Ici, nous avons un menu déroulant ainsi qu'un ensemble de "carte" où chacune d'entre-elle représente une partie du joueur.
+- menu déroulant : ce menu permet de sélectionner les parties du mode de jeu que l'on souhaite affichées 3 choix sont proposés :
+  - All : les 6 dernières parties.
+  - Normal : les 6 dernières parties dans le mode de jeu "Normal".
+  - Aram : les 6 dernières parties dans le mode de jeu "Aram".
+  - Attention : le choix "Normal" ou "Aram" peut mettre du temps à s'afficher à cause du temps de réponses de l'API LOL.
+- Carte : Chaque carte représente une partie jouée, sur chacune d'entre elle  on peut voir les informations suivantes :
+  - L'image de fond représente le personnage joué.
+  - Le texte écrit par dessus affiche :
+    - Le nom du champion utilisé.
+    - son KDA (Kill, Death, Assist) sur la partie.
 
-Pour rappel, la probabilité de recevoir une réponse à un mail envoyé quelques heures avant le rendu est très proche de 0.
+### Problèmes et bug
+- Tout le backend à été fait par Antonin, malheureusement il n'a pas pu push, on ne sait pas pourquoi.
+- (update) j'ai bien réussi à envoyer tout, certaines parties du back ne s'envoyaient pas, mais le code est au complet.
+- J'ai envoyé le code en retard à cause des différents composants (avec le OCRS nottament) qui ne voulaient pas s'afficher correctement, ainsi que les problèmes de git
