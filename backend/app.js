@@ -9,14 +9,14 @@ const corsOptions ={
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
-app.use(cors(corsOptions));
+
 
 
 var usersRouter = require("./routes/users");
 const router = require("./routes/users");
 
 var app = express();
-
+app.use(cors(corsOptions));
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
